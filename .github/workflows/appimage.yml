@@ -47,9 +47,12 @@ jobs:
           #mkdir -p AppDir
           #mv editor AppDir/
           #echo "python editor/Beremiz.py" > AppRun
-          #chmod +x AppDir/AppRun      
+          #chmod +x AppDir/AppRun  
+            
       - name: create virtual environment 
-        run: virtualenv -p python2 usr
+        run: |
+          sudo pip2 install virtualenv  
+          virtualenv -p python2 usr
 
       - name: Build AppImage
         uses: AppImageCrafters/build-appimage-action@master
