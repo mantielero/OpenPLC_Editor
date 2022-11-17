@@ -13,9 +13,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - run: apt -y update
+      - run: sudo apt -y update
       - name: install dependencies
-        run: DEBIAN_FRONTEND=noninteractive apt -y install 
+        run: DEBIAN_FRONTEND=noninteractive sudo apt -y install 
           curl
           build-essential
           pkg-config 
