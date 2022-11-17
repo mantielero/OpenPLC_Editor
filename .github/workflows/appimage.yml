@@ -64,6 +64,7 @@ jobs:
         uses: AppImageCrafters/build-appimage-action@master
         env:
           UPDATE_INFO: gh-releases-zsync|AppImageCrafters|appimage-demo-qt5|latest|*x86_64.AppImage.zsync
+          ARCH: x86_64
         with:
           recipe: AppImageBuilder.yml
       - uses: actions/upload-artifact@v2

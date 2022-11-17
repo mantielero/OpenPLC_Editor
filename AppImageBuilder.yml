@@ -24,25 +24,8 @@ AppDir:
       key_url: 'https://archive.neon.kde.org/public.key'
     include: []
 
-    # - flex 
-    # - autoconf 
-    # - automake 
-    # - libtool 
-    # - make 
-    # - git 
-    # - libssl-dev
-    # - python2
-    # - python2.7
-    # - python-wxgtk3.0
-    # - libssl-dev
-    # - libxml2-dev 
-    # - libxslt1-dev
-    # - python2-dev
-    # - python2.7-dev
-    # - libpng
-    # - libpng-dev 
-    # - libfreetype6-dev
 
+    # https://github.com/AppImageCommunity/pkg2appimage/blob/master/recipes/Pronterface.yml
   files:
     exclude:
     - usr/share/man
