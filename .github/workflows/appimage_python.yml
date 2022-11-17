@@ -1,0 +1,55 @@
+name: AppImage Creator
+
+on:
+  push:
+    branches: [ ci-appimage ]
+  pull_request:
+    branches: [ ci-appimage  ]
+
+jobs:
+  build-appimage:
+
+    runs-on: ubuntu-20.04  #ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      #- run: 
+      - name: install dependencies  # DEBIAN_FRONTEND=noninteractive 
+        run: |
+          sudo apt-get -y update
+          sudo apt-get -y install curl build-essential pkg-config bison flex autoconf automake libtool 
+          sudo apt-get -y install make git libssl-dev python2 python-wxgtk3.0 libssl-dev libxml2-dev
+          sudo apt-get -y install libxslt1-dev python2-dev 'libpng*' libfreetype6-dev  
+          # Including pip for python2.7
+          curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
+          sudo python2 get-pip.py
+
+      - name: create virtual environment
+        run: |
+          wget https://github.com/niess/python-appimage/releases/download/python2.7/python2.7.18-cp27-cp27m-manylinux1_x86_64.AppImage
+          chmod +x python2.7.18-cp27-cp27m-manylinux1_x86_64.AppImage
+          ./python2.7.18-cp27-cp27m-manylinux1_x86_64.AppImage --appimage-extract
+          mv squashfs-root ./
+          ln -s python3.11.0-cp311-cp311-manylinux2014_x86_64.AppDir/AppRun python2
+          usr/bin/pip install future zeroconf==0.19.1 numpy==1.16.5 matplotlib==2.0.2 lxml==4.6.2 pyro sslpsk pyserial
+      
+
+            
+      # - name: create virtual environment 
+      #   run: |
+      #     sudo pip install virtualenv  
+      #     virtualenv -p python2 usr
+      #     source usr/bin/activate
+      #     pip install future zeroconf==0.19.1 numpy==1.16.5 matplotlib==2.0.2 lxml==4.6.2 pyro sslpsk pyserial
+
+      - name: Build AppImage
+        uses: AppImageCrafters/build-appimage-action@master
+        env:
+          UPDATE_INFO: gh-releases-zsync|AppImageCrafters|appimage-demo-qt5|latest|*x86_64.AppImage.zsync
+          ARCH: x86_64
+        with:
+          recipe: AppImageBuilder.yml
+      - uses: actions/upload-artifact@v2
+        with:
+          name: AppImage
+          path: './*.AppImage*'
