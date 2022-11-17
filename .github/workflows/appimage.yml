@@ -13,9 +13,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - run: sudo apt -y update
+      #- run: 
       - name: install dependencies  # DEBIAN_FRONTEND=noninteractive 
-        run: sudo apt -y install  
+        run: |
+          - sudo apt -y update
+          - sudo apt -y install  
           curl
           build-essential
           pkg-config 
@@ -67,6 +69,7 @@ jobs:
           #chmod +x AppDir/AppRun      
       - name: create virtual environment 
         run: virtualenv -p python2 usr
+
       - name: Build AppImage
         uses: AppImageCrafters/build-appimage-action@master
         env:
