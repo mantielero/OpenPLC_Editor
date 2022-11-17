@@ -14,8 +14,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: sudo apt -y update
-      - name: install dependencies
-        run: DEBIAN_FRONTEND=noninteractive sudo apt -y install 
+      - name: install dependencies  # DEBIAN_FRONTEND=noninteractive 
+        run: sudo apt -y install  
           curl
           build-essential
           pkg-config 
@@ -28,13 +28,13 @@ jobs:
           git 
           libssl-dev
           python2
-          python2.7
+          #python2.7
           python-wxgtk3.0
           libssl-dev
           libxml2-dev
           libxslt1-dev
           python2-dev
-          python2.7-dev
+          #python2.7-dev
           'libpng*'
           libfreetype6-dev          
           # sudo apt-get -y -qq install curl
@@ -65,7 +65,8 @@ jobs:
           #mv editor AppDir/
           #echo "python editor/Beremiz.py" > AppRun
           #chmod +x AppDir/AppRun      
-
+      - name: create virtual environment 
+        run: virtualenv -p python2 usr
       - name: Build AppImage
         uses: AppImageCrafters/build-appimage-action@master
         env:
