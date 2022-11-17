@@ -24,8 +24,8 @@ jobs:
           sudo apt-get -y -qq install libxml2-dev libxslt1-dev
           sudo apt-get -y -qq install python2-dev
           sudo apt-get -y -qq install python2.7-dev
-          sudo apt-get -y -qq install libpng
-          sudo apt-get -y -qq install libpng-dev libfreetype6-dev          
+          sudo apt-get -y -qq install libpng12
+          sudo apt-get -y -qq install libpng12-dev libfreetype6-dev          
 
       - name: Build AppImage
         uses: AppImageCrafters/build-appimage-action@master
