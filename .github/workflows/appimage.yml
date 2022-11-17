@@ -9,7 +9,7 @@ on:
 jobs:
   build-appimage:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04  #ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
@@ -35,8 +35,12 @@ jobs:
           sudo apt-get -y -qq install python2-dev
           sudo apt-get -y -qq install python2.7-dev
           sudo apt-get -y -qq install 'libpng*'
-          #sudo apt-get -y -qq install libpng12-dev libfreetype6-dev
-          export ARCH=x86_64       
+          #sudo apt-get -y -qq install libpng12-dev 
+          sudo apt-get -y -qq install libfreetype6-dev
+          export ARCH=x86_64
+          mkdir -p AppDir
+          mv editor AppDir/
+          "python editor/Beremiz.py" > AppDir/AppRun      
 
       - name: Build AppImage
         uses: AppImageCrafters/build-appimage-action@master
