@@ -58,6 +58,7 @@ jobs:
           sudo pip install virtualenv  
           virtualenv -p python2 usr
           source usr/bin/activate
+          pip install future zeroconf==0.19.1 numpy==1.16.5 matplotlib==2.0.2 lxml==4.6.2 pyro sslpsk pyserial
 
       - name: Build AppImage
         uses: AppImageCrafters/build-appimage-action@master

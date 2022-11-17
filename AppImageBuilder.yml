@@ -22,15 +22,7 @@ AppDir:
     - sourceline: deb http://archive.ubuntu.com/ubuntu/ bionic-security main restricted universe multiverse
     - sourceline: deb http://archive.neon.kde.org/user/ bionic main
       key_url: 'https://archive.neon.kde.org/public.key'
-    include:
-    - future
-    - zeroconf==0.19.1 
-    - numpy==1.16.5 
-    - matplotlib==2.0.2 
-    - lxml==4.6.2 
-    - pyro 
-    - sslpsk 
-    - pyserial
+    includes: []
 
     # - flex 
     # - autoconf 
