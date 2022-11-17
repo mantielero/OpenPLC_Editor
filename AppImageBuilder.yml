@@ -1,8 +1,8 @@
 version: 1
-script:
-  - python2 -m pip install --system --ignore-installed --prefix=/usr --root=AppDir
-  - source usr/bin/activate
-  # pip2 install future zeroconf==0.19.1 numpy==1.16.5 matplotlib==2.0.2 lxml==4.6.2 pyro sslpsk pyserial
+#script:
+#  - python2 -m pip install --system --ignore-installed --prefix=/usr --root=AppDir
+#  - source usr/bin/activate
+#  # pip2 install future zeroconf==0.19.1 numpy==1.16.5 matplotlib==2.0.2 lxml==4.6.2 pyro sslpsk pyserial
 AppDir:
   path: ./
   app_info:
@@ -10,7 +10,7 @@ AppDir:
     name: OpenPLC Editor
     icon: appimage-demo-qt5
     version: latest
-    exec: python2 # editor/Beremiz.py
+    exec: usr/bin/python2 # editor/Beremiz.py
     exec_args: "$APPDIR/editor/Beremiz.py $@" #$@
   apt:
     arch: amd64
