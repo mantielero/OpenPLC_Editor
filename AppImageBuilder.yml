@@ -18,43 +18,30 @@ AppDir:
     - sourceline: deb http://archive.ubuntu.com/ubuntu/ bionic-security main restricted universe multiverse
     - sourceline: deb http://archive.neon.kde.org/user/ bionic main
       key_url: 'https://archive.neon.kde.org/public.key'
-    include:
-    - curl 
-    - build-essential 
-    - pkg-config 
-    - bison 
-    - flex 
-    - autoconf 
-    - automake 
-    - libtool 
-    - make 
-    - git 
-    - libssl-dev
-    - python2
-    - python2.7
-    - python-wxgtk3.0
-    - libssl-dev
-    - libxml2-dev 
-    - libxslt1-dev
-    - python2-dev
-    - python2.7-dev
-    - libpng
-    - libpng-dev 
-    - libfreetype6-dev
-    exclude:
-      - hicolor-icon-theme
-      - sound-theme-freedesktop
-      - perl
-      - perl-base
-      - kwayland-data
-      - libwacom2
-      - libasound2
-      - breeze
-      - breeze-icon-theme
-      - breeze-cursor-theme
-      - kwin-style-breeze
-      - kde-style-breeze
-      - plasma-integration
+    # include:
+    # - curl 
+    # - build-essential 
+    # - pkg-config 
+    # - bison 
+    # - flex 
+    # - autoconf 
+    # - automake 
+    # - libtool 
+    # - make 
+    # - git 
+    # - libssl-dev
+    # - python2
+    # - python2.7
+    # - python-wxgtk3.0
+    # - libssl-dev
+    # - libxml2-dev 
+    # - libxslt1-dev
+    # - python2-dev
+    # - python2.7-dev
+    # - libpng
+    # - libpng-dev 
+    # - libfreetype6-dev
+
   files:
     exclude:
     - usr/share/man
