@@ -10,7 +10,7 @@ AppDir:
     name: OpenPLC Editor
     icon: appimage-demo-qt5
     version: latest
-    exec: usr/bin/python2 # editor/Beremiz.py
+    exec: python2 # editor/Beremiz.py
     exec_args: "$APPDIR/editor/Beremiz.py $@" #$@
   apt:
     arch: amd64
@@ -22,11 +22,16 @@ AppDir:
     - sourceline: deb http://archive.ubuntu.com/ubuntu/ bionic-security main restricted universe multiverse
     - sourceline: deb http://archive.neon.kde.org/user/ bionic main
       key_url: 'https://archive.neon.kde.org/public.key'
-    include: [ ]
-    # - curl 
-    # - build-essential 
-    # - pkg-config 
-    # - bison 
+    include:
+    - future
+    - zeroconf==0.19.1 
+    - numpy==1.16.5 
+    - matplotlib==2.0.2 
+    - lxml==4.6.2 
+    - pyro 
+    - sslpsk 
+    - pyserial
+
     # - flex 
     # - autoconf 
     # - automake 
