@@ -56,8 +56,8 @@ jobs:
       - name: create virtual environment 
         run: |
           python2 -v 
-          sudo pip2 install virtualenv  
-          #virtualenv -p python2 usr
+          sudo pip install virtualenv  
+          virtualenv -p python2 usr
 
       - name: Build AppImage
         uses: AppImageCrafters/build-appimage-action@master
