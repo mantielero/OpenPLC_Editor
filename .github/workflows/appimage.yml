@@ -1,10 +1,10 @@
-name: C/C++ AppImage
+name: AppImage Creator
 
 on:
   push:
-    branches: [ master, ci-appimage ]
+    branches: [ ci-appimage ]
   pull_request:
-    branches: [ master, ci-appimage  ]
+    branches: [ ci-appimage  ]
 
 jobs:
   build-appimage:
@@ -16,7 +16,17 @@ jobs:
       - name: install dependencies
         run: |
           sudo apt-get -y -qq update
-          sudo apt-get -y -qq install curl build-essential pkg-config bison flex autoconf automake libtool make git libssl-dev
+          sudo apt-get -y -qq install curl
+          sudo apt-get -y -qq install build-essential
+          sudo apt-get -y -qq install pkg-config 
+          sudo apt-get -y -qq install bison
+          sudo apt-get -y -qq install flex 
+          sudo apt-get -y -qq install autoconf 
+          sudo apt-get -y -qq install automake 
+          sudo apt-get -y -qq install libtool 
+          sudo apt-get -y -qq install make 
+          sudo apt-get -y -qq install git 
+          sudo apt-get -y -qq install libssl-dev
           sudo apt-get -y -qq install python2
           sudo apt-get -y -qq install python2.7
           sudo apt-get -y -qq install python-wxgtk3.0
@@ -24,7 +34,7 @@ jobs:
           sudo apt-get -y -qq install libxml2-dev libxslt1-dev
           sudo apt-get -y -qq install python2-dev
           sudo apt-get -y -qq install python2.7-dev
-          #sudo apt-get -y -qq install libpng12
+          sudo apt-get -y -qq install 'libpng*'
           #sudo apt-get -y -qq install libpng12-dev libfreetype6-dev          
 
       - name: Build AppImage
