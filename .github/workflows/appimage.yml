@@ -2,9 +2,9 @@ name: AppImage Creator
 
 on:
   push:
-    branches: [ ci-appimage ]
+    branches: [ master ] #ci-appimage ]
   pull_request:
-    branches: [ ci-appimage  ]
+    branches: [ master ] #ci-appimage  ]
 
 jobs:
   build-appimage:

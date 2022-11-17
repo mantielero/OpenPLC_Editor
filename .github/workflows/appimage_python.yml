@@ -1,4 +1,4 @@
-name: AppImage Creator
+name: AppImage Python Creator
 
 on:
   push:
@@ -30,8 +30,8 @@ jobs:
           chmod +x python2.7.18-cp27-cp27m-manylinux1_x86_64.AppImage
           ./python2.7.18-cp27-cp27m-manylinux1_x86_64.AppImage --appimage-extract
           mv squashfs-root ./
-          ln -s python3.11.0-cp311-cp311-manylinux2014_x86_64.AppDir/AppRun python2
-          usr/bin/pip install future zeroconf==0.19.1 numpy==1.16.5 matplotlib==2.0.2 lxml==4.6.2 pyro sslpsk pyserial
+          #ln -s python3.11.0-cp311-cp311-manylinux2014_x86_64.AppDir/AppRun python2
+          opt/python2.7/bin/pip2.7 install future zeroconf==0.19.1 numpy==1.16.5 matplotlib==2.0.2 lxml==4.6.2 pyro sslpsk pyserial
       
 
             
