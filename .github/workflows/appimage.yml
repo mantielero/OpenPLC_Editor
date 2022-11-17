@@ -35,7 +35,8 @@ jobs:
           libxslt1-dev
           python2-dev
           python2.7-dev
-          'libpng*'          
+          'libpng*'
+          libfreetype6-dev          
           # sudo apt-get -y -qq install curl
           # sudo apt-get -y -qq install build-essential
           # sudo apt-get -y -qq install pkg-config 
@@ -56,9 +57,9 @@ jobs:
           # sudo apt-get -y -qq install python2.7-dev
           # sudo apt-get -y -qq install 'libpng*'
           #sudo apt-get -y -qq install libpng12-dev 
-          sudo apt-get -y -qq install libfreetype6-dev
-          export ARCH=x86_64
-          virtualenv -p python2 usr
+          #sudo apt-get -y -qq install libfreetype6-dev
+          #export ARCH=x86_64
+          #virtualenv -p python2 usr
           #python2 -m pip install --system --ignore-installed --prefix=/usr --root=AppDir
           #mkdir -p AppDir
           #mv editor AppDir/
