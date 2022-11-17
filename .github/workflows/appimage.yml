@@ -35,7 +35,8 @@ jobs:
           sudo apt-get -y -qq install python2-dev
           sudo apt-get -y -qq install python2.7-dev
           sudo apt-get -y -qq install 'libpng*'
-          #sudo apt-get -y -qq install libpng12-dev libfreetype6-dev          
+          #sudo apt-get -y -qq install libpng12-dev libfreetype6-dev
+          export ARCH=x86_64       
 
       - name: Build AppImage
         uses: AppImageCrafters/build-appimage-action@master
