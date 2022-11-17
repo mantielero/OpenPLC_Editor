@@ -19,7 +19,11 @@ jobs:
           sudo apt-get -y update
           sudo apt-get -y install curl build-essential pkg-config bison flex autoconf automake libtool 
           sudo apt-get -y install make git libssl-dev python2 python-wxgtk3.0 libssl-dev libxml2-dev
-          sudo apt-get -y install libxslt1-dev python2-dev 'libpng*' libfreetype6-dev          
+          sudo apt-get -y install libxslt1-dev python2-dev 'libpng*' libfreetype6-dev  
+          # Including pip for python2.7
+          curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
+          sudo python2 get-pip.py
+
           # sudo apt-get -y -qq install curl
           # sudo apt-get -y -qq install build-essential
           # sudo apt-get -y -qq install pkg-config 
@@ -52,7 +56,7 @@ jobs:
       - name: create virtual environment 
         run: |
           python2 -v 
-          #sudo pip2 install virtualenv  
+          sudo pip2 install virtualenv  
           #virtualenv -p python2 usr
 
       - name: Build AppImage
