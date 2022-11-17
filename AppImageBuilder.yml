@@ -1,13 +1,13 @@
 version: 1
 AppDir:
-  path: AppDir
+  path: ./
   app_info:
     id: openplceditor
     name: OpenPLC Editor
     icon: appimage-demo-qt5
     version: latest
-    exec: usr/bin/python editor/Beremiz.py
-    exec_args: $@
+    exec: usr/bin/python2 # editor/Beremiz.py
+    exec_args: "$APPDIR/editor/Beremiz.py $@" #$@
   apt:
     arch: amd64
     sources:
