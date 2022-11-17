@@ -16,29 +16,10 @@ jobs:
       #- run: 
       - name: install dependencies  # DEBIAN_FRONTEND=noninteractive 
         run: |
-          - sudo apt-get -y update
-          - sudo apt-get -y install  
-          curl
-          build-essential
-          pkg-config 
-          bison
-          flex 
-          autoconf 
-          automake 
-          libtool 
-          make 
-          git 
-          libssl-dev
-          python2
-          #python2.7
-          python-wxgtk3.0
-          libssl-dev
-          libxml2-dev
-          libxslt1-dev
-          python2-dev
-          #python2.7-dev
-          'libpng*'
-          libfreetype6-dev          
+          sudo apt-get -y update
+          sudo apt-get -y install curl build-essential pkg-config bison flex autoconf automake libtool 
+          sudo apt-get -y install make git libssl-dev python2 python-wxgtk3.0 libssl-dev libxml2-dev
+          sudo apt-get -y install libxslt1-dev python2-dev 'libpng*' libfreetype6-dev          
           # sudo apt-get -y -qq install curl
           # sudo apt-get -y -qq install build-essential
           # sudo apt-get -y -qq install pkg-config 
