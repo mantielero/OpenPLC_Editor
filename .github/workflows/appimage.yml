@@ -38,9 +38,11 @@ jobs:
           #sudo apt-get -y -qq install libpng12-dev 
           sudo apt-get -y -qq install libfreetype6-dev
           export ARCH=x86_64
-          mkdir -p AppDir
-          mv editor AppDir/
-          #echo "python editor/Beremiz.py" > AppDir/AppRun
+          virtualenv -p python2 usr
+          #python2 -m pip install --system --ignore-installed --prefix=/usr --root=AppDir
+          #mkdir -p AppDir
+          #mv editor AppDir/
+          #echo "python editor/Beremiz.py" > AppRun
           #chmod +x AppDir/AppRun      
 
       - name: Build AppImage
